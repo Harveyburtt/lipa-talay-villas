@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lipa Talay Villas | Luxury Beachside Villas in Lipa Noi, Koh Samui</title>
+  <meta name="description" content="Lipa Talay Villas — a private beachside residence in Lipa Noi, Koh Samui. Six unique luxury villas with ocean views, private pools, and direct beach access." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <div class="splash-inner">
+      <div class="splash-logo">LIPA TALAY VILLAS</div>
+      <div class="splash-sub">Lipa Noi · Koh Samui</div>
+      <div class="splash-wave"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo" onclick="navigate('home')">LIPA TALAY VILLAS</div>
+      <div class="nav-links">
+        <a onclick="navigate('home')">Home</a>
+        <a onclick="navigate('villas')">Villas</a>
+        <a onclick="navigate('location')">Location</a>
+        <a onclick="navigate('contact')">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu">
+    <button id="closeMenu">&times;</button>
+    <a onclick="navigate('home'); closeMobileMenu()">Home</a>
+    <a onclick="navigate('villas'); closeMobileMenu()">Villas</a>
+    <a onclick="navigate('location'); closeMobileMenu()">Location</a>
+    <a onclick="navigate('contact'); closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- PAGES WRAPPER -->
+  <main id="app">
+
+    <!-- HOME PAGE -->
+    <div class="page active" id="page-home">
+      <section class="hero">
+        <div class="hero-media">
+          <img id="heroImg" src="https://pub-5bb5c8088cdd4b5d83de5ef601a7f359.r2.dev/Lipa%20Talay%20Villa%20%28LTV%29/Lipa%20Talay%20Sawng%20%28205%29/205%20-%20Top%2040%20Large/1.jpg" alt="Lipa Talay Villas" />
+        </div>
+        <div class="hero-overlay">
+          <div class="hero-text">
+            <p class="hero-eyebrow">Lipa Noi · Koh Samui</p>
+            <h1>Where the Sea<br><em>Meets Sanctuary</em></h1>
+            <p class="hero-desc">Six exquisite beachside villas within a private residence on the tranquil west coast of Koh Samui.</p>
+            <button class="btn-hero" onclick="navigate('villas')">Explore Villas</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <div class="intro-grid">
+          <div class="intro-text">
+            <span class="section-eyebrow">The Residence</span>
+            <h2>A Private World by the Sea</h2>
+            <p>Lipa Talay Villas is a secluded beachfront residence nestled on the peaceful western shores of Koh Samui. Far from the crowds, here the days are long, the sunsets are legendary, and each villa has been designed to bring the outside in.</p>
+            <p>From intimate hideaways to spacious family villas, every home within the estate offers its own character — united by the same soul of calm, comfort, and coastal beauty.</p>
+            <button class="btn-outline" onclick="navigate('villas')">View All Villas</button>
+          </div>
+          <div class="intro-images">
+            <img src="https://pub-5bb5c8088cdd4b5d83de5ef601a7f359.r2.dev/Lipa%20Talay%20Villa%20%28LTV%29/Lipa%20Talay%20Haa%20%28212%29/212%20Top%2040/1.jpg" alt="Villa interior" />
+            <img src="https://pub-5bb5c8088cdd4b5d83de5ef601a7f359.r2.dev/Lipa%20Talay%20Villa%20%28LTV%29/Lipa%20Talay%20Hok%20%28201%29/201%20%28new%29/1.jpg" alt="Villa pool" />
+          </div>
+        </div>
+      </section>
+
+      <section class="features-strip">
+        <div class="feature"><div class="feat-icon">🌊</div><span>Beachfront Location</span></div>
+        <div class="feature"><div class="feat-icon">🏊</div><span>Private Pools</span></div>
+        <div class="feature"><div class="feat-icon">🌅</div><span>Sunset Views</span></div>
+        <div class="feature"><div class="feat-icon">🤿</div><span>Water Activities</span></div>
+        <div class="feature"><div class="feat-icon">🍽️</div><span>Full Kitchen</span></div>
+        <div class="feature"><div class="feat-icon">🛡️</div><span>Gated Estate</span></div>
+      </section>
+
+      <section class="villas-preview">
+        <div class="section-header">
+          <span class="section-eyebrow">Our Collection</span>
+          <h2>Six Villas. One Estate.</h2>
+        </div>
+        <div class="villa-cards" id="homeVillaCards"></div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-inner">
+          <h2>Your Samui Escape Awaits</h2>
+          <p>Reach out to our team to check availability and plan your perfect stay.</p>
+          <button class="btn-hero" onclick="navigate('contact')">Get in Touch</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- VILLAS PAGE -->
+    <div class="page" id="page-villas">
+      <div class="page-hero-small">
+        <h1>Our Villas</h1>
+        <p>Six unique homes within the Lipa Talay estate</p>
+      </div>
+      <section class="villas-full">
+        <div class="villa-cards-full" id="villasPageCards"></div>
+      </section>
+    </div>
+
+    <!-- INDIVIDUAL VILLA PAGES -->
+    <div class="page" id="page-villa-detail">
+      <div id="villaDetailContent"></div>
+    </div>
+
+    <!-- LOCATION PAGE -->
+    <div class="page" id="page-location">
+      <div class="page-hero-small">
+        <h1>Location</h1>
+        <p>Lipa Noi, Koh Samui, Thailand</p>
+      </div>
+      <section class="location-section">
+        <div class="location-grid">
+          <div class="location-text">
+            <span class="section-eyebrow">Lipa Noi</span>
+            <h2>The Quiet Side of Samui</h2>
+            <p>Located on the unspoilt western coast of Koh Samui, Lipa Noi is renowned for its calm, clear waters and spectacular sunsets over the Gulf of Thailand. Away from the bustle of Chaweng, this is Samui as it used to be.</p>
+            <p>The estate is a short drive from Nathon town for local markets and amenities, and approximately 30 minutes from Samui International Airport.</p>
+            <div class="location-facts">
+              <div class="loc-fact"><strong>30 min</strong><span>From Airport</span></div>
+              <div class="loc-fact"><strong>5 min</strong><span>To Nathon</span></div>
+              <div class="loc-fact"><strong>Direct</strong><span>Beach Access</span></div>
+            </div>
+          </div>
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.5!2d100.0166!3d9.5369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMzInMTIuOCJOIDEwMMKwMDEnMDAuMCJF!5e0!3m2!1sen!2sth!4v1234567890" width="100%" height="400" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div class="page" id="page-contact">
+      <div class="page-hero-small">
+        <h1>Contact Us</h1>
+        <p>We'd love to help plan your stay</p>
+      </div>
+      <section class="contact-section">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Whether you have a question about availability, villa details, or would like to make a booking enquiry, our team is here to help.</p>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a href="mailto:harvey@sunshinesamuivillas.com">harvey@sunshinesamuivillas.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Website</span>
+              <a href="https://sunshinesamuivillas.com" target="_blank">sunshinesamuivillas.com</a>
+            </div>
+
+            <!-- WhatsApp QR Block -->
+            <div class="whatsapp-block">
+              <div class="wa-icon">
+                <svg viewBox="0 0 24 24" fill="#25D366" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div class="wa-text">
+                <strong>Chat on WhatsApp</strong>
+                <p>Scan to message us directly</p>
+              </div>
+              <div class="wa-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://wa.me/66XXXXXXXXX" alt="WhatsApp QR" />
+              </div>
+            </div>
+          </div>
+          <div class="contact-img">
+            <img src="https://pub-5bb5c8088cdd4b5d83de5ef601a7f359.r2.dev/Lipa%20Talay%20Villa%20%28LTV%29/Lipa%20Talay%20Nueng%20%28301%29/LTN%20Images%20All/Villa%20301%20-%20Lipa%20Noi%20-%20March%202016%20%281%29.jpg" alt="Contact" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&times;</button>
+    <button class="lb-prev" onclick="event.stopPropagation(); lbNav(-1)">&#8592;</button>
+    <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+    <button class="lb-next" onclick="event.stopPropagation(); lbNav(1)">&#8594;</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">LIPA TALAY VILLAS</div>
+      <p>Lipa Noi, Koh Samui, Surat Thani, Thailand</p>
+      <p>&copy; 2026 Lipa Talay Villas. All rights reserved. Managed by <a href="https://sunshinesamuivillas.com" target="_blank">Sunshine Samui Villas</a>.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
